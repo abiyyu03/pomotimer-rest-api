@@ -16,9 +16,6 @@ const { dbHost, dbPort, dbName, dbUsername, dbPassword } = require('./config/dat
 const config = require('./config/auth');
 require('dotenv').config();
 
-// 142095363956-n7kelamehqfgha773ku63uqhe4vngfr1.apps.googleusercontent.com
-// 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
-
 const app = express();
 const port = process.env.PORT || 5000;
 const host = process.env.HOST;
