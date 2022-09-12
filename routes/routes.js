@@ -37,8 +37,7 @@ router.delete('/:id', async (req,res) => {
 });
 
 router.get('/:id',async (req,res) => {
-    const {id} = req.params;
-    res.json(await userStatistic.find({_id:id}));
+    await getByIdUserStatisticData(req, res);
 });
 
 router.get('/about/:id',(req,res) => {
