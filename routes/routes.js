@@ -4,7 +4,7 @@ const router = express.Router();
 const {userStatisticSchema,userStatistic} = require('../models/userStatisticSchema');
 const {userSchema,user} = require('../models/userSchema');
 
-const {storeDataAtStart,storeDataAtEnd,getAllUserStatisticData,deleteUserStatisticData} = require('../controllers/UserStatisticController');
+const {storeDataAtStart,storeDataAtEnd,getAllUserStatisticData,deleteUserStatisticData,getByIdUserStatisticData} = require('../controllers/UserStatisticController');
 const {login,registration,getAllUserData} = require('../controllers/UserController');
 
 //route area

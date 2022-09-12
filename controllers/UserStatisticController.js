@@ -61,5 +61,6 @@ module.exports = {
     storeDataAtBreak,
     storeDataAtEnd,
     getAllUserStatisticData,
-    deleteUserStatisticData
+    deleteUserStatisticData,
+    getByIdUserStatisticData
 };
