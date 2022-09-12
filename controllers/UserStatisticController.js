@@ -21,6 +21,10 @@ const storeDataAtStart = async (req,res) => {
         updatedAt:updatedAt,
     });
     await us.save();
+    res.status(201).json({
+        status:'success',
+        message:"Data stored successfully",
+    });
     // return {
     //     status:'success',
     //     StatusCode:201,

@@ -22,10 +22,6 @@ router.get('/',async (req,res) => {
 
 router.post('/', async (req,res) => {
     await storeDataAtStart(req,res);
-    res.status(201).json({
-        status:'success',
-        message:"Data stored successfully",
-    });
 });
 
 
