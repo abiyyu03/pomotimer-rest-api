@@ -21,16 +21,16 @@ const storeDataAtStart = async (req,res) => {
         updatedAt:updatedAt,
     });
     await us.save();
-    return {
-        status:'success',
-        StatusCode:201,
-        message:"Data stored successfully",
-    };
+    // return {
+    //     status:'success',
+    //     StatusCode:201,
+    //     message:"Data stored successfully",
+    // };
     
 }
 
-const getAllUserStatisticData = async () => {
-    await userStatistic.find();
+const getAllUserStatisticData = async (req,res) => {
+    await res.json(await userStatistic.find());
 }
 
 const deleteUserStatisticData = async (req,res) => {
