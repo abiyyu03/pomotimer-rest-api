@@ -1,16 +1,24 @@
 const express = require('express');
 const {nanoid} = require('nanoid');
 const mongoose = require('mongoose');
+// const ObjectId = require('mongoose').ObjectId;
 const {userStatisticSchema,userStatistic} = require('../models/userStatisticSchema');
 
 const storeDataAtStart = async (req,res) => {
-    const {interval,minutesFocused} = req.body;
+    const { startTime, stopTime, interval, minutesFocused, userId} = req.body;
     const id = nanoid(32);
-    const startTime = new Date().getTime();
+    const createdAt = new Date().getTime();
+    const updatedAt = new Date().getTime();
+    // const startTime = new Date().getTime();
     const us = new userStatistic({
         _id : id,
+        userId:mongoose.Types.ObjectId(parseInt(userId)),
         interval : interval,
         minutesFocused : minutesFocused,
+        startTime:startTime,
+        stopTime:stopTime,
+        createdAt:createdAt,
+        updatedAt:updatedAt,
     });
     await us.save();
     return {
