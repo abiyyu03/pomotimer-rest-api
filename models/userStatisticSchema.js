@@ -9,7 +9,7 @@ const userStatisticSchema = new Schema({
     //     idUser:String,
     //     username:String
     // },
-    user:{type:Schema.Types.ObjectId, ref:'users'},
+    userId:{type:Schema.Types.ObjectId, ref:'users'},
     interval:Number,
     minutesFocused:Number,
     startTime:String,
