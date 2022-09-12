@@ -44,7 +44,7 @@ const deleteUserStatisticData = async (req,res) => {
 
 const getByIdUserStatisticData = async (req, res) => {
     const {id} = req.params;
-    await res.json(await userStatistic.find({_id:id}));
+    await res.json(await userStatistic.findById(id));
 }
 
 const storeDataAtBreak = async () => {
