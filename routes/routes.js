@@ -6,8 +6,8 @@ const {storeDataAtStart,storeDataAtEnd,getAllUserStatisticData,deleteUserStatist
 //route area
   
 router.get('/',async (req,res) => {
-    res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
-    // res.json(await userStatistic.find());
+    // res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+    res.json(await userStatistic.find());
 });
 
 router.post('/', async (req,res) => {
