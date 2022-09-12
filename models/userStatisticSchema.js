@@ -1,25 +1,24 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-// let now = new Date().getHours()+':'+new Date().getMinutes()+':'+new Date().getSeconds();
 
 const collection = 'user_statistics';
 
 const userStatisticSchema = new Schema({
     _id:{type:String, max:128},
     // user:{
-    //     idUser:Number,
-    //     name:String
+    //     idUser:String,
+    //     username:String
     // },
+    user:{type:Schema.Types.ObjectId, ref:'users'},
     interval:Number,
     minutesFocused:Number,
-    // startHours:{type:Number,default:new Date().getHours()},
+    startTime:String,
+    stopTime:String,
+    createdAt:Date,
+    updatedAt:Date,
     // startMinutes:{type:Number,default:new Date().getMinutes()},
-    // startSeconds:{type:Number,default:new Date().getSeconds()},
-    // endHours:{type:Number,default:new Date().getHours()},
-    // endMinutes:{type:Number,default:new Date().getMinutes()},
-    // endSeconds:{type:Number,default:new Date().getSeconds()},
 });
-const userStatistic = mongoose.model(collection,userStatisticSchema)
+const userStatistic = mongoose.model(collection,userStatisticSchema);
 
 module.exports = {
     userStatisticSchema,
