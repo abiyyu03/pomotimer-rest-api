@@ -33,6 +33,7 @@ const login = () => {
     
 }
 
+const deleteUserData = async (req, res) =>
 module.exports = {
     login,
     registration,
