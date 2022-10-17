@@ -7,10 +7,6 @@ const cors = require('cors');
 const request = require('request');
 const urlParse = require('url-parse');
 const queryParse = require('query-string');
-// const { auth } = require('express-openid-connect');
-// const expressSession = require('express-session');
-// const passport = require('passport');
-// const auth0Strategy = require('passport-auth0');
 
 const { dbHost, dbPort, dbName, dbUsername, dbPassword } = require('./config/database');
 const config = require('./config/auth');
@@ -35,7 +31,8 @@ db.on('error',err =>{
     console.log(`connection error : ${err}`);
 });
 
-
 app.listen(port, () => {
     console.log(`Server is running at ${host}:${port}`);
-})
+});
+
+
